@@ -1,8 +1,10 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigation } from "react-router-dom";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
 const Home = () => {
+    const navigation = useNavigation();
+
     return (
         <div>
            <div className="w-4/5 mx-auto flex justify-between items-center py-8">
@@ -10,7 +12,9 @@ const Home = () => {
            <Header></Header>
            </div>
            <main className="w-11/12 mx-auto">
-           <Outlet></Outlet>
+          {
+            navigation.state === "loading" ? <p className="text-center my-8 text-gray-700 text-2xl font-semibold">loading...</p> : <Outlet></Outlet>
+          }
             <div className="mb-12">
             <div className="carousel">
             <div id="slide1" className="carousel-item relative w-full">
