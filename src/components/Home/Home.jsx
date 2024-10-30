@@ -12,6 +12,10 @@ const Home = () => {
            <Header></Header>
            </div>
            <main className="w-11/12 mx-auto">
+          {
+            navigation.state === "loading" ? <p className="text-center my-8 text-gray-700 text-2xl font-semibold">loading...</p> : <Outlet></Outlet>
+          }
+          
             <div className="lg:w-11/12 mx-auto mb-12">
             <div className="carousel">
             <div id="slide1" className="carousel-item relative w-full">
@@ -52,9 +56,6 @@ const Home = () => {
             </div>
             </div>
          </div>
-          {
-            navigation.state === "loading" ? <p className="text-center my-8 text-gray-700 text-2xl font-semibold">loading...</p> : <Outlet></Outlet>
-          }
     </main>
     <Footer></Footer>
  </div>
