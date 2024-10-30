@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const Meal = ({meal}) => {
-    const {strCategory, idMeal, strMeal, strMealThumb, strInstructions, strArea, strYouTube} = meal;
+    const {strCategory, idMeal, strMeal, strMealThumb, strInstructions, strArea} = meal;
 
     const navigate = useNavigate();
 
@@ -15,13 +16,11 @@ const Meal = ({meal}) => {
             <figure className="w-full h-56">
                 <img src={strMealThumb} className="w-full h-full rounded-xl"/>
             </figure>
-            <div className="card-body space-y-3">
+            <div className="my-4 ml-2 space-y-3">
                 <h1 className="text-xl font-extrabold">{strCategory}</h1>
                 <h2 className="text-lg font-bold text-gray-700">{strMeal}</h2>
                 <h3 className="text-gray-600 font-bold">Area: {strArea}</h3>
                 <p className="text-gray-500 font-medium">{strInstructions.slice(0, 150)}...</p>
-
-
                 <div className="card-actions">
                 <button onClick={handleViewDetails} className="btn btn-info w-full font-bold">View Details</button>
                 </div>
@@ -30,5 +29,9 @@ const Meal = ({meal}) => {
           </div>
     );
 };
+
+Meal.propTypes = {
+    meal: PropTypes.object
+}
 
 export default Meal;
