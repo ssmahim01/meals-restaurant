@@ -8,7 +8,7 @@ const Home = () => {
     return (
         <div>
            <div className="w-4/5 mx-auto flex justify-between items-center py-8">
-           <h2 className="text-2xl font-extrabold text-rose-400">MZ Cafe</h2>
+           <h2 className="md:text-2xl text-lg font-extrabold text-purple-500">MZ Cafe</h2>
            <Header></Header>
            </div>
            <main className="w-11/12 mx-auto">

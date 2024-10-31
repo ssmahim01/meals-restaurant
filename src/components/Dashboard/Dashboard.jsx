@@ -5,15 +5,15 @@ const Dashboard = () => {
     const navigate = useNavigate();
 
     const mealsData = [
-        {
-            "cafeName": "Grill House",
-            "cost": 30000,
-            "profit": 50000
-          },
           {
             "cafeName": "MZ Cafe",
             "cost": 65000,
             "profit": 85000
+          },
+          {
+            "cafeName": "Grill House",
+            "cost": 30000,
+            "profit": 50000
           },
           {
             "cafeName": "Stir Fry Central",
